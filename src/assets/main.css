@@ -44,6 +44,10 @@
   outline-color: var(--color-primary-main);
 }
 
+.scrollbar-w-none {
+  scrollbar-width: none;
+}
+
 @media (hover: hover) {
   .hover\:bg-primary:hover {
     background-color: var(--color-primary-darkened);

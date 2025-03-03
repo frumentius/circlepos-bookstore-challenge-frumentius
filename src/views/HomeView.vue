@@ -6,7 +6,7 @@ import ProductList from '@/components/ProductList.vue'
 
 <template>
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div class="pt-6 sm:pt-10">
+    <div class="pt-8">
       <MainCarousel
         :images="[
           {

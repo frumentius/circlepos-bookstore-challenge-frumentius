@@ -63,7 +63,7 @@ const selectedSize = ref(product.sizes[2])
 
 <template>
   <div class="bg-white">
-    <div class="pt-6">
+    <div class="pt-8">
       <nav aria-label="Breadcrumb">
         <ol
           role="list"

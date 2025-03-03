@@ -318,8 +318,8 @@ const closeCart = () => {
         Get free delivery on orders over $100
       </p>
 
-      <nav aria-label="Top" class="mx-auto sm:px-3 lg:px-4">
-        <div class="border-b border-gray-200">
+      <nav aria-label="Top" class="mx-auto pr-3 sm:px-6 lg:px-8">
+        <div class="">
           <div class="flex h-16 items-center">
             <button
               type="button"
