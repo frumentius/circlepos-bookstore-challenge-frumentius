@@ -19,7 +19,7 @@ interface Books {
 const scrollContainer = ref<HTMLElement | null>(null)
 
 // Scroll amount
-const scrollAmount = 216
+const scrollAmount = 196
 
 // Scroll left
 function scrollLeft() {
@@ -65,13 +65,13 @@ onMounted(() => {
     </h2>
 
     <div class="overflow-x-auto scrollbar-w-none" ref="scrollContainer">
-      <div class="flex flex-nowrap gap-4">
-        <div v-for="product in products" :key="product.id" class="relative shrink-0 w-50">
+      <div class="flex flex-nowrap gap-2 sm:gap-4">
+        <div v-for="product in products" :key="product.id" class="relative shrink-0 w-32 sm:w-45">
           <a :href="'/product/' + product.id" class="block w-full">
             <img
               :src="'/images/product/thumbnail/book ' + product.id + '.jpg'"
               :alt="product.title"
-              class="w-full rounded-2xl bg-gray-200 object-cover block"
+              class="w-full rounded-lg md:rounded-2xl bg-gray-200 object-cover block aspect-10/16"
             />
             <div class="mt-4 flex justify-between">
               <div>
@@ -124,11 +124,11 @@ onMounted(() => {
 }
 
 .prev {
-  left: -10px;
+  left: -16px;
 }
 
 .next {
-  right: -10px;
+  right: -16px;
 }
 
 #product-carousel:hover .carousel-control {

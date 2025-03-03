@@ -368,12 +368,12 @@ const closeCart = () => {
                     leave-from-class="opacity-100"
                     leave-to-class="opacity-0"
                   >
-                    <PopoverPanel class="absolute inset-x-0 top-full text-sm text-gray-500">
+                    <PopoverPanel class="absolute inset-x-0 top-full text-sm text-gray-500 z-50">
                       <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
                       <div class="absolute inset-0 top-1/2 bg-white shadow-sm" aria-hidden="true" />
 
                       <div class="relative bg-white">
-                        <div class="mx-auto max-w-7xl px-8">
+                        <div class="mx-auto max-w-6xl px-8">
                           <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                             <div class="col-start-2 grid grid-cols-2 gap-x-8">
                               <div

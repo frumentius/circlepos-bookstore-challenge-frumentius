@@ -14,7 +14,7 @@ const d = new Date()
 
 <template>
   <footer class="text-gray-700">
-    <div class="mt-16 mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 pb-4">
+    <div class="mt-16 mx-auto px-4 sm:px-6 lg:max-w-6xl lg:px-8 pb-4">
       <!-- Grid Section -->
       <div class="grid grid-cols-1 md:grid-cols-5 gap-8 pt-8 border-t border-gray-300">
         <!-- Newsletter Section -->

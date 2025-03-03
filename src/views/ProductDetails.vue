@@ -67,7 +67,7 @@ const selectedSize = ref(product.sizes[2])
       <nav aria-label="Breadcrumb">
         <ol
           role="list"
-          class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
+          class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-6xl lg:px-8"
         >
           <li v-for="breadcrumb in product.breadcrumbs" :key="breadcrumb.id">
             <div class="flex items-center">
@@ -99,7 +99,7 @@ const selectedSize = ref(product.sizes[2])
 
       <!-- Image gallery -->
       <div
-        class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8"
+        class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-6xl lg:grid-cols-3 lg:gap-x-8 lg:px-8"
       >
         <img
           :src="product.images[0].src"
@@ -127,7 +127,7 @@ const selectedSize = ref(product.sizes[2])
 
       <!-- Product info -->
       <div
-        class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24"
+        class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-6xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24"
       >
         <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
           <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">

@@ -83,16 +83,7 @@ function goto(idx: number) {
         </div>
       </div>
     </div>
-
-    <!-- Navigation buttons -->
-    <!--
-    <button class="carousel-control prev" @click="prev" :disabled="currentIndex === 0">
-      <span class="material-icons">chevron_left</span>
-    </button>
-    <button class="carousel-control next" @click="next" :disabled="currentIndex === totalItems - 1">
-      <span class="material-icons">chevron_right</span>
-    </button>
-  --></div>
+  </div>
 </template>
 
 <style scoped>
@@ -111,8 +102,15 @@ function goto(idx: number) {
 .carousel-slide {
   flex: 0 0 auto;
   padding: 0 8px;
+  box-sizing: border-box;
   height: 100%;
   transition: width 0.3s ease;
+}
+.carousel-slide:first-child {
+  padding-left: 0 !important;
+}
+.carousel-slide:last-child {
+  padding-right: 0 !important;
 }
 
 .carousel-slide-big {
@@ -140,29 +138,6 @@ function goto(idx: number) {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  padding: 10px;
   cursor: pointer;
-  color: white;
-}
-
-.carousel-control:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
 }
 </style>
