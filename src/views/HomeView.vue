@@ -29,6 +29,22 @@ import ProductList from '@/components/ProductList.vue'
             src: '/images/carousel/carousel 5.jpg',
             alt: 'Image 5',
           },
+          {
+            src: '/images/carousel/carousel 6.jpg',
+            alt: 'Image 6',
+          },
+          {
+            src: '/images/carousel/carousel 7.jpg',
+            alt: 'Image 7',
+          },
+          {
+            src: '/images/carousel/carousel 8.jpg',
+            alt: 'Image 8',
+          },
+          {
+            src: '/images/carousel/carousel 9.jpg',
+            alt: 'Image 9',
+          },
         ]"
       />
 
