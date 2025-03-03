@@ -49,6 +49,7 @@ const slideClasses = computed(() => {
   return classes
 })
 
+/*
 function next() {
   if (currentIndex.value < totalItems.value - 1) {
     currentIndex.value++
@@ -60,8 +61,9 @@ function prev() {
     currentIndex.value--
   }
 }
+*/
 
-function goto(idx) {
+function goto(idx: number) {
   currentIndex.value = idx
 }
 </script>
@@ -77,19 +79,20 @@ function goto(idx) {
         @click="goto(index)"
       >
         <div class="image-container">
-          <img :src="image.src" :alt="image.alt" />
+          <img :src="image.src" :alt="image.alt" class="rounded-3xl" />
         </div>
       </div>
     </div>
 
     <!-- Navigation buttons -->
+    <!--
     <button class="carousel-control prev" @click="prev" :disabled="currentIndex === 0">
       <span class="material-icons">chevron_left</span>
     </button>
     <button class="carousel-control next" @click="next" :disabled="currentIndex === totalItems - 1">
       <span class="material-icons">chevron_right</span>
     </button>
-  </div>
+  --></div>
 </template>
 
 <style scoped>
@@ -101,7 +104,7 @@ function goto(idx) {
 
 .carousel-wrapper {
   display: flex;
-  aspect-ratio: 5 / 1;
+  aspect-ratio: 5 / 2;
   transition: transform 0.4s ease;
 }
 

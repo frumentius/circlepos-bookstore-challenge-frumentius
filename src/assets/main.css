@@ -1,1 +1,9 @@
 @import './base.css';
+
+:root {
+  --circlepos-red: #961918;
+}
+
+.bg-red-circlepos {
+  background-color: var(--circlepos-red);
+}
