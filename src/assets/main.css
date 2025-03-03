@@ -1,9 +1,54 @@
 @import './base.css';
 
 :root {
-  --circlepos-red: #961918;
+  --color-carmine-main: #961918;
+  --color-primary-main: #189697;
+  --color-primary-darkened: #13696a;
+  --color-secondary-main: #6b7280;
+  --color-secondary-darkened: #4c515b;
+  --color-danger-main: #ffcab1;
+  --color-warning-main: #ffd275;
 }
 
-.bg-red-circlepos {
-  background-color: var(--circlepos-red);
+.bg-hero {
+  background-color: var(--color-carmine-main);
+}
+
+.bg-primary {
+  background-color: var(--color-primary-main);
+}
+.hover\:bg-primary:hover {
+  background-color: var(--color-primary-darkened);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary-main);
+}
+.hover\:bg-secondary:hover {
+  background-color: var(--color-secondary-darkened);
+}
+
+.bg-danger {
+  background-color: var(--color-danger-main);
+}
+
+.bg-warning {
+  background-color: var(--color-warning-main);
+}
+
+.focus\:outline-primary:focus {
+  outline-color: var(--color-primary-main);
+}
+
+.focus-visible\:outline-primary:focus-visible {
+  outline-color: var(--color-primary-main);
+}
+
+@media (hover: hover) {
+  .hover\:bg-primary:hover {
+    background-color: var(--color-primary-darkened);
+  }
+  .hover\:bg-secondary:hover {
+    background-color: var(--color-secondary-darkened);
+  }
 }

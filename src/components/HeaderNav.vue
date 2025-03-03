@@ -313,7 +313,7 @@ const closeCart = () => {
 
     <header class="relative bg-white">
       <p
-        class="flex h-10 items-center justify-center px-4 text-sm font-medium text-white sm:px-6 lg:px-8 bg-red-circlepos"
+        class="flex h-10 items-center justify-center px-4 text-sm font-medium text-white sm:px-6 lg:px-8 bg-primary"
       >
         Get free delivery on orders over $100
       </p>

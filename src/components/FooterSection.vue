@@ -1,61 +1,40 @@
-<script lang="ts">
-export default {
-  data() {
-    return {
-      email: '',
-    }
-  },
-  methods: {
-    subscribe() {
-      alert(`Subscribed with email: ${this.email}`)
-      this.email = ''
-    },
-  },
+<script setup lang="ts">
+import { ref } from 'vue'
+const email = ref('')
+
+function subscribe() {
+  if (email.value !== '') {
+    alert('Subscribed with email: ' + email.value)
+    email.value = ''
+  }
 }
+
+const d = new Date()
 </script>
 
 <template>
   <footer class="text-gray-700">
-    <div class="mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 pt-8 pb-4">
-      <!-- Newsletter Section -->
-      <div class="mb-8 text-center">
-        <h3 class="text-xl font-bold mb-2">Subscribe to Our Newsletter</h3>
-        <p class="mb-4">Get the latest updates and offers.</p>
-        <form @submit.prevent="subscribe" class="flex justify-center max-w-md mx-auto">
-          <input
-            type="email"
-            v-model="email"
-            placeholder="Enter your email"
-            class="px-4 py-2 rounded-l-md focus:outline-none text-black w-full"
-          />
-          <button
-            type="submit"
-            class="bg-blue-500 px-4 py-2 rounded-r-md hover:bg-blue-600 transition"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
-
+    <div class="mt-16 mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 pb-4">
       <!-- Grid Section -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Company Info -->
-        <div>
-          <h4 class="text-lg font-bold mb-4">Company Name</h4>
-          <p class="mb-4">Brief description about the company.</p>
-          <p>123 Street Name, City, Country</p>
-          <p>Phone: (123) 456-7890</p>
-          <div class="flex space-x-4 mt-4">
-            <a href="#" class="text-white hover:text-gray-300">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="text-white hover:text-gray-300">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="text-white hover:text-gray-300">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 pt-8 border-t border-gray-300">
+        <!-- Newsletter Section -->
+        <div class="md:col-span-2">
+          <h3 class="text-xl font-bold mb-2">Subscribe to Our Newsletter</h3>
+          <p class="mb-4">Get the latest updates and offers.</p>
+          <form @submit.prevent="subscribe" class="flex max-w-md">
+            <input
+              type="email"
+              v-model="email"
+              placeholder="Enter your email"
+              class="block w-full rounded-md bg-white px-3 mr-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-primary sm:text-sm/6"
+            />
+            <button
+              type="submit"
+              class="rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
 
         <!-- Shop Links -->
@@ -91,11 +70,11 @@ export default {
 
       <!-- Copyright Section -->
       <div class="mt-8 pt-8 border-t border-gray-300 text-center">
-        <p>&copy; 2023 Company Name. All rights reserved.</p>
+        <p>&copy;{{ d.getFullYear() }} Circlepos Front-end Challenge. All rights reserved.</p>
         <div class="flex justify-center space-x-4 mt-4">
-          <img src="/images/logo/visa.png" alt="Visa" class="h-6" />
-          <img src="/images/logo/mastercard.png" alt="Mastercard" class="h-6" />
-          <img src="/images/logo/paypal.png" alt="PayPal" class="h-6" />
+          <img src="/images/logo/visa.png" alt="Visa" class="h-4" />
+          <img src="/images/logo/mastercard.png" alt="Mastercard" class="h-4" />
+          <img src="/images/logo/paypal.png" alt="PayPal" class="h-4" />
         </div>
       </div>
     </div>
