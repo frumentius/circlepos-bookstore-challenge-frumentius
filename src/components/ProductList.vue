@@ -1,27 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import { getBestSeller } from '@/composables/useBook'
+import type { Book } from '@/models/books'
 
 const products = ref<Book[]>([])
-
-interface Book {
-  id: number
-  title: string
-  author: string
-  isbn: string
-  price: number
-  availableStock: number
-}
-interface Books {
-  books: Book[]
-}
-
+const error = ref('')
 const scrollContainer = ref<HTMLElement | null>(null)
-
-// Scroll amount
 const scrollAmount = 196
 
-// Scroll left
 function scrollLeft() {
   if (scrollContainer.value) {
     scrollContainer.value.scrollBy({
@@ -31,7 +17,6 @@ function scrollLeft() {
   }
 }
 
-// Scroll right
 function scrollRight() {
   if (scrollContainer.value) {
     scrollContainer.value.scrollBy({
@@ -41,59 +26,53 @@ function scrollRight() {
   }
 }
 
-onMounted(() => {
-  axios
-    .get<Books>('http://localhost:8000/books')
-    .then(function (response) {
-      products.value = JSON.parse(JSON.stringify(response.data.books))
-      console.log(response.data)
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error)
-    })
-    .finally(function () {
-      // always executed
-    })
+onMounted(async () => {
+  try {
+    const response = await getBestSeller()
+    products.value = JSON.parse(JSON.stringify(response))
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : 'Unknown error occurred'
+  }
 })
 </script>
 
 <template>
-  <div id="product-carousel" class="relative py-8 sm:py-16">
+  <div class="py-8 sm:py-16">
     <h2 class="mb-4 sm:mb-8 text-2xl font-bold tracking-tight text-gray-900">
       Customers also purchased
     </h2>
 
-    <div class="overflow-x-auto scrollbar-w-none" ref="scrollContainer">
-      <div class="flex flex-nowrap gap-2 sm:gap-4">
-        <div v-for="product in products" :key="product.id" class="relative shrink-0 w-32 sm:w-45">
-          <a :href="'/product/' + product.id" class="block w-full">
-            <img
-              :src="'/images/product/thumbnail/book ' + product.id + '.jpg'"
-              :alt="product.title"
-              class="w-full rounded-lg md:rounded-2xl bg-gray-200 object-cover block aspect-10/16"
-            />
-            <div class="mt-4 flex justify-between">
-              <div>
-                <h3 class="text-sm text-gray-700">
-                  <span aria-hidden="true" class="absolute inset-0" />
-                  {{ product.title }}
-                </h3>
-                <!-- <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p> -->
+    <div class="carousel-container">
+      <div class="overflow-x-auto scrollbar-w-none" ref="scrollContainer">
+        <div class="flex flex-nowrap gap-2 sm:gap-4">
+          <div v-for="product in products" :key="product.id" class="relative shrink-0 w-35 sm:w-48">
+            <a :href="'/product/' + product.id" class="block w-full">
+              <img
+                :src="'/images/product/thumbnail/book ' + product.id + '.jpg'"
+                :alt="product.title"
+                class="w-full rounded-lg md:rounded-2xl bg-gray-200 object-cover block aspect-10/16"
+              />
+              <div class="mt-4 flex justify-between">
+                <div>
+                  <h3 class="text-sm text-gray-700">
+                    <span aria-hidden="true" class="absolute inset-0" />
+                    {{ product.title }}
+                  </h3>
+                  <!-- <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p> -->
+                </div>
+                <p class="text-sm font-medium text-gray-900">NZ&dollar;{{ product.price }}</p>
               </div>
-              <p class="text-sm font-medium text-gray-900">NZ&dollar;{{ product.price }}</p>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
+      <button class="carousel-control prev" @click="scrollLeft" :disabled="false">
+        <span class="material-icons">chevron_left</span>
+      </button>
+      <button class="carousel-control next" @click="scrollRight" :disabled="false">
+        <span class="material-icons">chevron_right</span>
+      </button>
     </div>
-
-    <button class="carousel-control prev" @click="scrollLeft" :disabled="false">
-      <span class="material-icons">chevron_left</span>
-    </button>
-    <button class="carousel-control next" @click="scrollRight" :disabled="false">
-      <span class="material-icons">chevron_right</span>
-    </button>
   </div>
 </template>
 
@@ -131,7 +110,10 @@ onMounted(() => {
   right: -16px;
 }
 
-#product-carousel:hover .carousel-control {
+.carousel-container {
+  position: relative;
+}
+.carousel-container:hover .carousel-control {
   display: block;
 }
 </style>
