@@ -41,9 +41,8 @@ const d = new Date()
         <div>
           <h4 class="text-lg font-bold mb-4">Shop</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="hover:underline">Category 1</a></li>
-            <li><a href="#" class="hover:underline">Category 2</a></li>
-            <li><a href="#" class="hover:underline">Category 3</a></li>
+            <li><a href="#" class="hover:underline">Books</a></li>
+            <li><a href="#" class="hover:underline">e-Book</a></li>
           </ul>
         </div>
 
@@ -70,7 +69,10 @@ const d = new Date()
 
       <!-- Copyright Section -->
       <div class="mt-8 pt-8 border-t border-gray-300 text-center">
-        <p>&copy;{{ d.getFullYear() }} Circlepos Front-end Challenge. All rights reserved.</p>
+        <p>
+          &copy;{{ d.getFullYear() }} <a href="https://webtech.id" target="_blank">Frumentius</a>.
+          All rights reserved.
+        </p>
         <div class="flex justify-center space-x-4 mt-4">
           <img src="/images/logo/visa.png" alt="Visa" class="h-4" />
           <img src="/images/logo/mastercard.png" alt="Mastercard" class="h-4" />

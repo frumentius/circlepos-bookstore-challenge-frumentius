@@ -26,120 +26,114 @@ import ShoppingCart from './ShoppingCart.vue'
 const navigation = {
   categories: [
     {
-      id: 'women',
-      name: 'Women',
+      id: 'book',
+      name: 'Books',
       featured: [
+        {
+          name: 'Best Sellers',
+          href: '#',
+          imageSrc: '/images/carousel/carousel 1.jpg',
+          imageAlt: 'Black Book Sparkly',
+        },
         {
           name: 'New Arrivals',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/plus-assets/img/ecommerce-images/mega-menu-category-01.jpg',
-          imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
-        },
-        {
-          name: 'Basic Tees',
-          href: '#',
-          imageSrc:
-            'https://tailwindui.com/plus-assets/img/ecommerce-images/mega-menu-category-02.jpg',
-          imageAlt:
-            'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+          imageSrc: '/images/carousel/carousel 6.jpg',
+          imageAlt: 'Woman holding a book',
         },
       ],
       sections: [
         {
-          id: 'clothing',
-          name: 'Clothing',
+          id: 'cat1',
+          name: 'Category 1',
           items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Dresses', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Denim', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
+            { name: 'Lorem', href: '#' },
+            { name: 'Ipsum', href: '#' },
+            { name: 'Dolor', href: '#' },
+            { name: 'Sit', href: '#' },
+            { name: 'Amet', href: '#' },
+            { name: 'Adspicing', href: '#' },
+            { name: 'Consectetur', href: '#' },
+            { name: 'Elit', href: '#' },
+            { name: 'Nulia pretium', href: '#' },
           ],
         },
         {
-          id: 'accessories',
-          name: 'Accessories',
+          id: 'cat2',
+          name: 'Category 2',
           items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
+            { name: 'Est nec', href: '#' },
+            { name: 'Tincidunt', href: '#' },
+            { name: 'Porttitor', href: '#' },
+            { name: 'Felis sem', href: '#' },
+            { name: 'Lobortis', href: '#' },
+            { name: 'Erat', href: '#' },
           ],
         },
         {
-          id: 'brands',
-          name: 'Brands',
+          id: 'cat 3',
+          name: 'Category 3',
           items: [
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Significant Other', href: '#' },
+            { name: 'Sed interdum', href: '#' },
+            { name: 'Enim', href: '#' },
+            { name: 'Justo', href: '#' },
+            { name: 'Luctus', href: '#' },
+            { name: 'Faucibus', href: '#' },
           ],
         },
       ],
     },
     {
-      id: 'men',
-      name: 'Men',
+      id: 'ebook',
+      name: 'e-Book',
       featured: [
+        {
+          name: 'Best Sellers',
+          href: '#',
+          imageSrc: '/images/carousel/carousel 4.jpg',
+          imageAlt: 'Graphic Design',
+        },
         {
           name: 'New Arrivals',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/plus-assets/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
-          imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
-        },
-        {
-          name: 'Artwork Tees',
-          href: '#',
-          imageSrc:
-            'https://tailwindui.com/plus-assets/img/ecommerce-images/category-page-02-image-card-06.jpg',
-          imageAlt:
-            'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
+          imageSrc: '/images/carousel/carousel 7.jpg',
+          imageAlt: 'New England',
         },
       ],
       sections: [
         {
-          id: 'clothing',
-          name: 'Clothing',
+          id: 'cat4',
+          name: 'Category 4',
           items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
+            { name: 'Maecenas', href: '#' },
+            { name: 'Pulvinar', href: '#' },
+            { name: 'Integer', href: '#' },
+            { name: 'Dictum', href: '#' },
+            { name: 'Metus', href: '#' },
+            { name: 'Viberra', href: '#' },
+            { name: 'Urna ut', href: '#' },
           ],
         },
         {
-          id: 'accessories',
-          name: 'Accessories',
+          id: 'cat5',
+          name: 'Category 5',
           items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
+            { name: 'Fermentum', href: '#' },
+            { name: 'Posuere', href: '#' },
+            { name: 'Placerat', href: '#' },
+            { name: 'Vel rutrum', href: '#' },
+            { name: 'Quam', href: '#' },
+            { name: 'Ligula vel', href: '#' },
           ],
         },
         {
-          id: 'brands',
-          name: 'Brands',
+          id: 'cat 6',
+          name: 'Category 6',
           items: [
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
+            { name: 'Nam portitor', href: '#' },
+            { name: 'Fusce', href: '#' },
+            { name: 'Maximus', href: '#' },
+            { name: 'Phasellus', href: '#' },
           ],
         },
       ],
@@ -220,8 +214,8 @@ const closeCart = () => {
                       <button
                         :class="[
                           selected
-                            ? 'border-indigo-600 text-indigo-600'
-                            : 'border-transparent text-gray-900',
+                            ? 'border-primary text-primary'
+                            : 'border-transparent text-gray-700',
                           'flex-1 border-b-2 px-1 py-4 text-base font-medium whitespace-nowrap',
                         ]"
                       >
@@ -247,7 +241,7 @@ const closeCart = () => {
                           :alt="item.imageAlt"
                           class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
                         />
-                        <a :href="item.href" class="mt-6 block font-medium text-gray-900">
+                        <a :href="item.href" class="mt-6 block font-medium text-gray-700">
                           <span class="absolute inset-0 z-10" aria-hidden="true" />
                           {{ item.name }}
                         </a>
@@ -257,7 +251,7 @@ const closeCart = () => {
                     <div v-for="section in category.sections" :key="section.name">
                       <p
                         :id="`${category.id}-${section.id}-heading-mobile`"
-                        class="font-medium text-gray-900"
+                        class="font-medium text-gray-700"
                       >
                         {{ section.name }}
                       </p>
@@ -279,7 +273,7 @@ const closeCart = () => {
 
               <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div v-for="page in navigation.pages" :key="page.name" class="flow-root">
-                  <a :href="page.href" class="-m-2 block p-2 font-medium text-gray-900">{{
+                  <a :href="page.href" class="-m-2 block p-2 font-medium text-gray-700">{{
                     page.name
                   }}</a>
                 </div>
@@ -287,23 +281,11 @@ const closeCart = () => {
 
               <div class="space-y-6 border-t border-gray-200 px-4 py-6">
                 <div class="flow-root">
-                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
+                  <a href="#" class="-m-2 block p-2 font-medium text-gray-700">Sign in</a>
                 </div>
                 <div class="flow-root">
-                  <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Create account</a>
+                  <a href="#" class="-m-2 block p-2 font-medium text-gray-700">Create account</a>
                 </div>
-              </div>
-
-              <div class="border-t border-gray-200 px-4 py-6">
-                <a href="#" class="-m-2 flex items-center p-2">
-                  <img
-                    src="https://tailwindui.com/plus-assets/img/flags/flag-canada.svg"
-                    alt=""
-                    class="block h-auto w-5 shrink-0"
-                  />
-                  <span class="ml-3 block text-base font-medium text-gray-900">CAD</span>
-                  <span class="sr-only">, change currency</span>
-                </a>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -333,7 +315,7 @@ const closeCart = () => {
 
             <!-- Logo -->
             <div class="ml-4 flex lg:ml-0">
-              <a href="#">
+              <a href="/">
                 <span class="sr-only">Your Company</span>
                 <img class="h-8 w-auto" src="/images/logo/circlepos.png" alt="" />
               </a>
@@ -352,7 +334,7 @@ const closeCart = () => {
                     <PopoverButton
                       :class="[
                         open
-                          ? 'border-indigo-600 text-indigo-600'
+                          ? 'border-primary text-primary'
                           : 'border-transparent text-gray-700 hover:text-gray-800',
                         'relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out',
                       ]"
@@ -386,7 +368,7 @@ const closeCart = () => {
                                   :alt="item.imageAlt"
                                   class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
                                 />
-                                <a :href="item.href" class="mt-6 block font-medium text-gray-900">
+                                <a :href="item.href" class="mt-6 block font-medium text-gray-700">
                                   <span class="absolute inset-0 z-10" aria-hidden="true" />
                                   {{ item.name }}
                                 </a>
@@ -397,7 +379,7 @@ const closeCart = () => {
                               <div v-for="section in category.sections" :key="section.name">
                                 <p
                                   :id="`${section.name}-heading`"
-                                  class="font-medium text-gray-900"
+                                  class="font-medium text-gray-700"
                                 >
                                   {{ section.name }}
                                 </p>
@@ -440,18 +422,6 @@ const closeCart = () => {
                 <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >Create account</a
                 >
-              </div>
-
-              <div class="hidden lg:ml-8 lg:flex">
-                <a href="#" class="flex items-center text-gray-700 hover:text-gray-800">
-                  <img
-                    src="https://tailwindui.com/plus-assets/img/flags/flag-canada.svg"
-                    alt=""
-                    class="block h-auto w-5 shrink-0"
-                  />
-                  <span class="ml-3 block text-sm font-medium">CAD</span>
-                  <span class="sr-only">, change currency</span>
-                </a>
               </div>
 
               <!-- Search -->

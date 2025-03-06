@@ -73,7 +73,7 @@ const close = () => emits('close-cart')
                 <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                   <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                     <div class="flex items-start justify-between">
-                      <DialogTitle class="text-lg font-medium text-gray-900"
+                      <DialogTitle class="text-lg font-medium text-gray-700"
                         >Shopping cart</DialogTitle
                       >
                       <div class="ml-3 flex h-7 items-center">
@@ -105,13 +105,11 @@ const close = () => emits('close-cart')
 
                             <div class="ml-4 flex flex-1 flex-col">
                               <div>
-                                <div
-                                  class="flex justify-between text-base font-medium text-gray-900"
-                                >
-                                  <h3>
+                                <div class="flex justify-between text-base font-medium">
+                                  <h3 class="text-gray-700">
                                     <a :href="product.href">{{ product.name }}</a>
                                   </h3>
-                                  <p class="ml-4">{{ product.price }}</p>
+                                  <p class="ml-4 text-gray-900">{{ product.price }}</p>
                                 </div>
                                 <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
                               </div>

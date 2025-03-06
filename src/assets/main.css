@@ -36,12 +36,36 @@
   background-color: var(--color-warning-main);
 }
 
+.text-primary {
+  color: var(--color-primary-main);
+}
+
+.text-primary-darkened {
+  color: var(--color-primary-darkened);
+}
+
+.text-warning {
+  color: var(--color-warning-main);
+}
+
+.text-danger {
+  color: var(--color-danger-main);
+}
+
+.border-primary {
+  border-color: var(--color-primary-main);
+}
+
 .focus\:outline-primary:focus {
   outline-color: var(--color-primary-main);
 }
 
 .focus-visible\:outline-primary:focus-visible {
   outline-color: var(--color-primary-main);
+}
+
+.focus\:ring-primary:focus {
+  --tw-ring-color: var(--color-primary-darkened);
 }
 
 .scrollbar-w-none {

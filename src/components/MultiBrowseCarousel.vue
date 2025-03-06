@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-
-interface ImageItem {
-  src: string
-  alt: string
-}
+import type { ImageItem } from '@/models/images'
 
 const props = defineProps<{
   images: ImageItem[]
@@ -69,7 +65,7 @@ function goto(idx: number) {
 </script>
 
 <template>
-  <div :class="['material-carousel']">
+  <div class="material-carousel py-2">
     <!-- Carousel slides -->
     <div class="carousel-wrapper" :style="wrapperStyle">
       <div
@@ -79,7 +75,11 @@ function goto(idx: number) {
         @click="goto(index)"
       >
         <div class="image-container">
-          <img :src="image.src" :alt="image.alt" class="rounded-3xl" />
+          <img
+            :src="image.src"
+            :alt="image.alt"
+            class="rounded-3xl shadow-sm shadow-gray-500 hover:shadow-md hover:opacity-75"
+          />
         </div>
       </div>
     </div>

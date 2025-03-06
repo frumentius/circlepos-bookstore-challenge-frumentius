@@ -14,7 +14,7 @@ export class BookService implements IBookService {
   async getBook(id: number): Promise<Book> {
     try {
       const response = await axios.get(this.API_URL + '/' + id)
-      return response.data
+      return response.data.book
     } catch (error) {
       if (IS_DEBUG) console.error('Error fetching Book data:', error)
       throw new Error('Failed to fetch book data.')
