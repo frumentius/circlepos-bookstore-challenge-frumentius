@@ -42,7 +42,7 @@ function scrollRight() {
             <img
               :src="'/images/product/thumbnail/book ' + book.id + '.jpg'"
               :alt="book.title"
-              class="w-full rounded-lg md:rounded-2xl object-cover block aspect-10/16 shadow-sm shadow-gray-500 group-hover:shadow-md group-hover:opacity-75"
+              class="w-full rounded-lg md:rounded-2xl object-cover block aspect-2/3 shadow-sm shadow-gray-500 group-hover:shadow-md group-hover:opacity-75"
             />
             <div class="mt-2.5">
               <h3 class="text-gray-700">

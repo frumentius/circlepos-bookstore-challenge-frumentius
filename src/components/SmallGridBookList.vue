@@ -22,7 +22,7 @@ const props = defineProps<{
         <img
           :src="'/images/product/thumbnail/book ' + book.id + '.jpg'"
           :alt="book.title"
-          class="w-15 rounded-sm object-cover block aspect-10/16 shadow-sm shadow-gray-500 group-hover:shadow-md group-hover:opacity-75"
+          class="w-15 rounded-sm object-cover block aspect-2/3 shadow-sm shadow-gray-500 group-hover:shadow-md group-hover:opacity-75"
         />
         <div>
           <span class="text-sm sm:text-base text-gray-700">
