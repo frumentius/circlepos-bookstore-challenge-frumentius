@@ -6,8 +6,10 @@
   --color-primary-darkened: #13696a;
   --color-secondary-main: #6b7280;
   --color-secondary-darkened: #4c515b;
-  --color-danger-main: #ffcab1;
-  --color-warning-main: #ffd275;
+  --color-danger-main: #ef798a;
+  --color-danger-darkened: #bd5561;
+  --color-warning-main: #fcca46;
+  --color-warning-darkened: #c88d31;
 }
 
 .bg-hero {
@@ -39,8 +41,7 @@
 .text-primary {
   color: var(--color-primary-main);
 }
-
-.text-primary-darkened {
+.hover\:text-primary:hover {
   color: var(--color-primary-darkened);
 }
 
@@ -50,6 +51,9 @@
 
 .text-danger {
   color: var(--color-danger-main);
+}
+.hover\:text-danger:hover {
+  color: var(--color-danger-darkened);
 }
 
 .border-primary {
@@ -78,5 +82,11 @@
   }
   .hover\:bg-secondary:hover {
     background-color: var(--color-secondary-darkened);
+  }
+  .hover\:text-primary:hover {
+    color: var(--color-primary-darkened);
+  }
+  .hover\:text-danger:hover {
+    color: var(--color-danger-darkened);
   }
 }

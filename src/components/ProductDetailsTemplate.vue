@@ -49,6 +49,9 @@ function showDetails() {
   detailsClass.value = ['details-wrapper', 'lg:h-max']
   detailsStyle.value = { height: expandedHeight }
   detailsActionStyle.value = { display: 'none' }
+  setTimeout(() => {
+    detailsStyle.value = { height: 'max-content' }
+  }, 800)
 }
 </script>
 
@@ -107,7 +110,7 @@ function showDetails() {
                     <a
                       @click="showDetails"
                       href="#review_section"
-                      class="text-xs md:text-sm text-gray-500 hover:text-primary-darkened"
+                      class="text-xs md:text-sm text-gray-500 hover:text-gray-600"
                     >
                       &nbsp;{{ reviews.totalCount }} reviews
                     </a>

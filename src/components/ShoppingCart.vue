@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, defineEmits } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
-import { XMarkIcon } from '@heroicons/vue/24/outline'
+import { CreditCardIcon, TrashIcon, XMarkIcon } from '@heroicons/vue/24/solid'
 
 const props = defineProps({
   isCartOpen: {
@@ -119,9 +119,11 @@ const close = () => emits('close-cart')
                                 <div class="flex">
                                   <button
                                     type="button"
-                                    class="font-medium text-indigo-600 hover:text-indigo-500"
+                                    class="font-medium text-danger hover:text-danger flex items-center"
                                   >
-                                    Remove
+                                    <span class="sr-only">Remove item</span>
+                                    <TrashIcon class="size-3.5" aria-hidden="true" />
+                                    remove
                                   </button>
                                 </div>
                               </div>
@@ -143,16 +145,17 @@ const close = () => emits('close-cart')
                     <div class="mt-6">
                       <a
                         href="#"
-                        class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-indigo-700"
-                        >Checkout</a
+                        class="flex items-center justify-center rounded-md border border-transparent bg-primary px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-primary"
                       >
+                        <CreditCardIcon class="size-4.5" aria-hidden="true" />&nbsp;Checkout
+                      </a>
                     </div>
                     <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                       <p>
                         or{{ ' ' }}
                         <button
                           type="button"
-                          class="font-medium text-indigo-600 hover:text-indigo-500"
+                          class="font-medium text-primary hover:text-primary"
                           @click="close"
                         >
                           Continue Shopping

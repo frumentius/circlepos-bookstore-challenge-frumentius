@@ -13,6 +13,9 @@ const props = defineProps<{
   <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
     <div id="review_section">
       <h3 class="text-lg sm:text-base md:text-lg font-bold mb-2">Customer Reviews</h3>
+      <div class="text-6xl">
+        {{ props.reviews.average }}
+      </div>
       <div class="flex items-center">
         <div class="flex items-center">
           <StarIcon
@@ -26,7 +29,7 @@ const props = defineProps<{
           />
         </div>
         <p class="sr-only">{{ props.reviews.average }} out of 5 stars</p>
-        <div class="ml-3 text-xs sm:text-sm">Based on {{ props.reviews.totalCount }} reviews</div>
+        <div class="ml-2 text-xs sm:text-sm">based on {{ props.reviews.totalCount }} reviews</div>
       </div>
       <div class="mt-8 text-sm sm:text-base">
         <p class="font-medium">Share your thoughts</p>
