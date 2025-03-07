@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import { useCartStore } from '@/stores/cart'
 import {
   Dialog,
   DialogPanel,
@@ -145,6 +147,7 @@ const navigation = {
   ],
 }
 
+const shoppingBag = useCartStore()
 const open = ref(false)
 const isCartOpen = ref(false)
 
@@ -315,10 +318,10 @@ const closeCart = () => {
 
             <!-- Logo -->
             <div class="ml-4 flex lg:ml-0">
-              <a href="/">
+              <RouterLink to="/">
                 <span class="sr-only">Your Company</span>
                 <img class="h-8 w-auto" src="/images/logo/circlepos.png" alt="" />
-              </a>
+              </RouterLink>
             </div>
 
             <!-- Flyout menus -->
@@ -439,9 +442,9 @@ const closeCart = () => {
                     class="size-6 shrink-0 text-gray-400 group-hover:text-gray-500"
                     aria-hidden="true"
                   />
-                  <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
-                    >0</span
-                  >
+                  <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                    {{ shoppingBag.totalItems }}
+                  </span>
                   <span class="sr-only">items in cart, view bag</span>
                 </div>
               </div>

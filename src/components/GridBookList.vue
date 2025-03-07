@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 import { StarIcon } from '@heroicons/vue/20/solid'
 import type { Book } from '@/models/books'
 
@@ -15,7 +16,7 @@ const props = defineProps<{
 
   <div class="grid grid-cols-1 gap-3 sm:gap-4 md:gap-5 md:grid-cols-2 lg:grid-cols-3">
     <div v-for="(book, index) in props.list" :key="book.id" class="group relative">
-      <a :href="'/product/' + book.id" class="flex gap-3 sm:gap-4 md:gap-5 w-full">
+      <RouterLink :to="'/product/' + book.id" class="flex gap-3 sm:gap-4 md:gap-5 w-full">
         <div>{{ index + 1 }}.</div>
         <img
           :src="'/images/product/thumbnail/book ' + book.id + '.jpg'"
@@ -42,7 +43,7 @@ const props = defineProps<{
             </div>
           </div>
         </div>
-      </a>
+      </RouterLink>
     </div>
   </div>
 </template>

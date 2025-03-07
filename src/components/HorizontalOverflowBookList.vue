@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@heroicons/vue/20/solid'
 import type { Book } from '@/models/books'
 
@@ -38,7 +39,7 @@ function scrollRight() {
     <div class="overflow-x-auto scrollbar-w-none" ref="scrollContainer">
       <div class="flex flex-nowrap gap-3 sm:gap-4 md:gap-5">
         <div v-for="book in props.list" :key="book.id" class="relative shrink-0 w-35 sm:w-48">
-          <a :href="'/product/' + book.id" class="block w-full group relative">
+          <RouterLink :to="'/product/' + book.id" class="block w-full group relative">
             <img
               :src="'/images/product/thumbnail/book ' + book.id + '.jpg'"
               :alt="book.title"
@@ -68,7 +69,7 @@ function scrollRight() {
                 </div>
               </div>
             </div>
-          </a>
+          </RouterLink>
         </div>
       </div>
     </div>

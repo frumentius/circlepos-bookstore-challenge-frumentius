@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import type { Book } from '@/models/books'
 import RelatedBookList from '@/views/features/RelatedBookList.vue'
 import { BookOpenIcon, HeartIcon as HeartIconSolid, StarIcon } from '@heroicons/vue/20/solid'
@@ -53,6 +54,10 @@ function showDetails() {
     detailsStyle.value = { height: 'max-content' }
   }, 800)
 }
+
+const emits = defineEmits(['add-to-cart', 'toggle-favourite'])
+const addToCart = () => emits('add-to-cart')
+const toggleFav = () => emits('toggle-favourite')
 </script>
 
 <template>
@@ -64,7 +69,9 @@ function showDetails() {
       >
         <li v-for="breadcrumb in props.productDummyData.breadcrumbs" :key="breadcrumb.id">
           <div class="flex items-center">
-            <a :href="breadcrumb.href" class="mr-2 text-sm font-medium">{{ breadcrumb.name }}</a>
+            <RouterLink :to="breadcrumb.href" class="mr-2 text-sm font-medium">{{
+              breadcrumb.name
+            }}</RouterLink>
             <svg
               width="16"
               height="20"
@@ -78,12 +85,13 @@ function showDetails() {
           </div>
         </li>
         <li class="text-sm whitespace-nowrap overflow-hidden text-ellipsis">
-          <a
-            :href="props.productDummyData.href"
+          <RouterLink
+            :to="'/product/' + props.product.id"
             aria-current="page"
             class="font-medium text-gray-500 hover:text-gray-600"
-            >{{ props.product.title }}</a
           >
+            {{ props.product.title }}
+          </RouterLink>
         </li>
       </ol>
     </nav>
@@ -136,11 +144,12 @@ function showDetails() {
           </div>
           <h2 class="sr-only">Product information</h2>
 
-          <form class="mt-10 sm:flex gap-4">
+          <div class="mt-10 sm:flex gap-4">
             <button
               v-if="props.product.availableStock > 0"
-              type="submit"
+              type="button"
               class="flex items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 mb-4 text-sm sm:text-xs lg:text-sm font-medium text-white hover:bg-primary focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-hidden w-full md:w-65"
+              @click="addToCart"
             >
               <span class="opacity-75 text-white line-through">&dollar;88.8</span>
               &nbsp;
@@ -160,6 +169,7 @@ function showDetails() {
             <button
               type="button"
               class="rounded-md border-2 border-primary bg-white px-8 py-3 sm:mb-4 text-sm sm:text-xs lg:text-sm font-medium text-primary hover:bg-gray-100 focus:outline-hidden w-full md:w-65"
+              @click="toggleFav"
             >
               <div class="flex items-center justify-center" v-if="!props.productDummyData.isFav">
                 <HeartIconOutline class="size-4 lg:size-5" />&nbsp;Add to favourite
@@ -168,7 +178,7 @@ function showDetails() {
                 <HeartIconSolid class="size-4 lg:size-5 text-danger" />&nbsp;Is in favourite
               </div>
             </button>
-          </form>
+          </div>
         </div>
       </div>
 

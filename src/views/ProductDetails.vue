@@ -3,10 +3,17 @@ import { ref } from 'vue'
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
 
+import { idb } from '@/composables/useIDB'
+import { useCartStore } from '@/stores/cart'
 import { getBookDetails } from '@/composables/useBook'
 import ProductDetailsTemplate from '@/components/ProductDetailsTemplate.vue'
+import type { Book } from '@/models/books'
 
-const productDummyData = {
+import { makeSerializable } from '@/utils/parsers'
+
+const shoppingBag = useCartStore()
+
+const productDummyData = ref({
   href: '#',
   breadcrumbs: [
     { id: 1, name: 'e-Book', href: '#' },
@@ -20,10 +27,10 @@ const productDummyData = {
     language: 'English',
     pages: 300,
   },
-  isFav: true,
-}
+  isFav: false,
+})
 
-const product = ref(null)
+const product = ref<Book | null>(null)
 
 const route = useRoute()
 const error = ref('')
@@ -47,6 +54,21 @@ const loadProductDetails = async () => {
   }
 }
 
+const addToCart = () => {
+  if (product.value) {
+    const productObj = makeSerializable<Book>(product.value)
+    shoppingBag.addItem(productObj) //LANJUT INI !!!!! WOOOOIIII !!!!!!!!!!!!!!!! HALOOOOO !!!!!!!!!!!!!!!!!!!!!!!!!! YUHUUUUUUUUUUUUUUUUUUUUUUU
+    idb.store<Book>('carts', productObj)
+    alert('Added to Cart!')
+  }
+}
+
+const toggleFav = () => {
+  productDummyData.value.isFav = !productDummyData.value.isFav
+  if (productDummyData.value.isFav) alert('Added to Your Favourite List!')
+  else alert('Removed from Your Favourite List!')
+}
+
 watch(
   () => route.params.bookId,
   (newId, oldId) => {
@@ -63,6 +85,8 @@ watch(
     v-if="!loading"
     :product="product"
     :product-dummy-data="productDummyData"
+    @add-to-cart="addToCart"
+    @toggle-favourite="toggleFav"
   />
 
   <!--could make a skeleton in the future for better loading aestethic-->
