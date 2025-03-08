@@ -32,10 +32,7 @@ export const useCartStore = defineStore('cart', () => {
       lastUpdated.value = new Date()
 
       idb.clear('carts').then(() => {
-        console.log(items.value)
-        const newObj = makeSerializable(items.value)
-        console.log(newObj)
-        idb.store('carts', newObj)
+        idb.store('carts', makeSerializable(items.value))
       })
     }
   }
