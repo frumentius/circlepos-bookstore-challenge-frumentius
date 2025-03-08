@@ -1,6 +1,8 @@
-import { bookService } from '@/services/bookService.ts'
+import { BookService } from '@/services/bookService.ts'
 import type { Book } from '@/models/books'
 import { IS_DEBUG } from '@/utils/config.ts'
+
+const bookService = new BookService()
 
 export async function getBookDetails(bookId: number): Promise<Book> {
   try {

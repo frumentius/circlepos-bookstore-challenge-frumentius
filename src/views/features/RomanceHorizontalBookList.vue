@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue'
 import { getRomance } from '@/composables/useBook'
 import type { Book } from '@/models/books'
 import HorizontalOverflowBookList from '@/components/HorizontalOverflowBookList.vue'
+import { makeSerializable } from '@/utils/parsers'
 
 const books = ref<Book[]>([])
 const error = ref('')
@@ -10,7 +11,7 @@ const error = ref('')
 onMounted(async () => {
   try {
     const response = await getRomance()
-    books.value = JSON.parse(JSON.stringify(response))
+    books.value = makeSerializable<Book[]>(response)
   } catch (err) {
     error.value = err instanceof Error ? err.message : 'Unknown error occurred'
   }

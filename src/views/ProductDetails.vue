@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { watch } from 'vue'
 import { useRoute } from 'vue-router'
 
-import { idb } from '@/composables/useIDB'
 import { useCartStore } from '@/stores/cart'
 import { getBookDetails } from '@/composables/useBook'
 import ProductDetailsTemplate from '@/components/ProductDetailsTemplate.vue'
@@ -46,7 +45,7 @@ const loadProductDetails = async () => {
     if (isNaN(productId)) throw new Error('Invalid product ID')
 
     const response = await getBookDetails(productId)
-    product.value = JSON.parse(JSON.stringify(response))
+    product.value = makeSerializable<Book>(response)
   } catch (err) {
     error.value = err instanceof Error ? err.message : 'Unknown error occurred'
   } finally {
@@ -56,9 +55,7 @@ const loadProductDetails = async () => {
 
 const addToCart = () => {
   if (product.value) {
-    const productObj = makeSerializable<Book>(product.value)
-    shoppingBag.addItem(productObj) //LANJUT INI !!!!! WOOOOIIII !!!!!!!!!!!!!!!! HALOOOOO !!!!!!!!!!!!!!!!!!!!!!!!!! YUHUUUUUUUUUUUUUUUUUUUUUUU
-    idb.store<Book>('carts', productObj)
+    shoppingBag.addItem(makeSerializable<Book>(product.value))
     alert('Added to Cart!')
   }
 }

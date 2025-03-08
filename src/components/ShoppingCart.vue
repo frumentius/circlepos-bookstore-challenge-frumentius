@@ -86,12 +86,12 @@ const shoppingBag = useCartStore()
                                   </RouterLink>
                                 </h3>
                                 <p class="ml-4 text-gray-900">
-                                  NZ&dollar;{{ product.price * product.qty }}
+                                  NZ&dollar;{{ product.price * product.quantity }}
                                 </p>
                               </div>
 
                               <div class="flex flex-1 items-end justify-between text-sm">
-                                <p class="text-gray-500">Qty: {{ product.qty }}</p>
+                                <p class="text-gray-500">Qty: {{ product.quantity }}</p>
 
                                 <div class="flex">
                                   <button

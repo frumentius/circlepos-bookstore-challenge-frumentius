@@ -39,5 +39,3 @@ export class BookService implements IBookService {
     }
   }
 }
-
-export const bookService = new BookService()
