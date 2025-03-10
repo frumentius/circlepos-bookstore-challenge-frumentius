@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { computed, defineEmits } from 'vue'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
+
 import { useCartStore } from '@/stores/cart'
+import { useCheckoutStore } from '@/stores/checkout'
+
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 import { CreditCardIcon, TrashIcon, XMarkIcon } from '@heroicons/vue/24/solid'
 
@@ -17,6 +20,14 @@ const emits = defineEmits(['close-cart'])
 const close = () => emits('close-cart')
 
 const shoppingBag = useCartStore()
+
+const router = useRouter()
+const checkoutStore = useCheckoutStore()
+
+const initiateCheckout = () => {
+  checkoutStore.startCheckout(shoppingBag.items)
+  router.replace('/checkout')
+}
 </script>
 
 <template>
@@ -122,12 +133,13 @@ const shoppingBag = useCartStore()
                       Shipping and taxes calculated at checkout.
                     </p>
                     <div v-if="shoppingBag.totalItems > 0" class="mt-6">
-                      <a
-                        href="#"
-                        class="flex items-center justify-center rounded-md border border-transparent bg-primary px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-primary"
+                      <button
+                        type="button"
+                        @click="initiateCheckout"
+                        class="flex items-center justify-center rounded-md border border-transparent bg-primary px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-primary w-full"
                       >
                         <CreditCardIcon class="size-4.5" aria-hidden="true" />&nbsp;Checkout
-                      </a>
+                      </button>
                     </div>
                     <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                       <p>

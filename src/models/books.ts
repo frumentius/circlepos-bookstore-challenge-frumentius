@@ -11,5 +11,5 @@ export interface Books {
 }
 export interface BookPurchaseResponse {
   message: string
-  book: Book
+  book?: Book
 }

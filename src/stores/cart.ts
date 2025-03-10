@@ -42,6 +42,12 @@ export const useCartStore = defineStore('cart', () => {
 
     idb.delete('carts', itemId)
   }
+  function clearCart() {
+    idb.clear('carts').then(() => {
+      items.value = []
+      lastUpdated.value = null
+    })
+  }
 
   async function hydrate() {
     try {
@@ -52,5 +58,5 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
-  return { items, lastUpdated, totalItems, totalPrice, addItem, removeItem, hydrate }
+  return { items, lastUpdated, totalItems, totalPrice, addItem, removeItem, clearCart, hydrate }
 })

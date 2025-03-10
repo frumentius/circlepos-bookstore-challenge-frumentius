@@ -1,5 +1,5 @@
 import { BookService } from '@/services/bookService.ts'
-import type { Book } from '@/models/books'
+import type { Book, BookPurchaseResponse } from '@/models/books'
 import { IS_DEBUG } from '@/utils/config.ts'
 
 const bookService = new BookService()
@@ -85,5 +85,15 @@ export async function getRelated(): Promise<Book[]> {
   } catch (err) {
     if (IS_DEBUG) console.error(err)
     throw new Error(err instanceof Error ? err.message : 'Failed to fetch related')
+  }
+}
+
+export async function purchaseBook(bookId: number): Promise<BookPurchaseResponse> {
+  try {
+    const response = await bookService.purchaseBook(bookId)
+    return response
+  } catch (err) {
+    if (IS_DEBUG) console.error(err)
+    throw new Error(err instanceof Error ? err.message : 'Failed to purchase book ID: ' + bookId)
   }
 }

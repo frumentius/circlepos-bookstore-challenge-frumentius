@@ -37,10 +37,10 @@ const formatKey = (key: string) => {
 
 const reviews = { average: 4.8, totalCount: 117 }
 
-const detailsElement = ref<HTMLDivElement | null>(null)
+const detailsElement = ref<HTMLDivElement>()
 const detailsClass = ref(['details-wrapper', 'lg:h-max', 'h-30'])
 const detailsStyle = ref({})
-const detailsActionStyle = ref()
+const detailsActionStyle = ref({})
 
 function showDetails() {
   let expandedHeight: number | string = detailsElement.value?.scrollHeight || 0

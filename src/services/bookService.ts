@@ -31,7 +31,15 @@ export class BookService implements IBookService {
   }
   async purchaseBook(id: number): Promise<BookPurchaseResponse> {
     try {
-      const response = await axios.post(this.API_URL + '/' + id + 'purchase')
+      const response = await axios.post(
+        this.API_URL + '/' + id + '/purchase',
+        {},
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      )
       return response.data
     } catch (error) {
       if (IS_DEBUG) console.error('Error posting Book purchase:', error)
