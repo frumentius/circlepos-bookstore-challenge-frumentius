@@ -1,6 +1,7 @@
 import { BookService } from '@/services/bookService.ts'
 import type { Book, BookPurchaseResponse } from '@/models/books'
 import { IS_DEBUG } from '@/utils/config.ts'
+import type { CartItem } from '@/models/carts'
 
 const bookService = new BookService()
 
@@ -88,12 +89,12 @@ export async function getRelated(): Promise<Book[]> {
   }
 }
 
-export async function purchaseBook(bookId: number): Promise<BookPurchaseResponse> {
+export async function purchaseBook(book: CartItem): Promise<BookPurchaseResponse> {
   try {
-    const response = await bookService.purchaseBook(bookId)
+    const response = await bookService.purchaseBook(book)
     return response
   } catch (err) {
     if (IS_DEBUG) console.error(err)
-    throw new Error(err instanceof Error ? err.message : 'Failed to purchase book ID: ' + bookId)
+    throw new Error(err instanceof Error ? err.message : 'Failed to purchase book ID: ' + book.id)
   }
 }

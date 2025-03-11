@@ -1,11 +1,12 @@
 import type { Book, BookPurchaseResponse } from '@/models/books.ts'
+import type { CartItem } from '@/models/carts'
 import { BACK_END_URL, IS_DEBUG } from '@/utils/config.ts'
 import axios from 'axios'
 
 interface IBookService {
   getBook(id: number): Promise<Book>
   getAllBooks(): Promise<Book[]>
-  purchaseBook(id: number): Promise<BookPurchaseResponse>
+  purchaseBook(book: CartItem): Promise<BookPurchaseResponse>
 }
 
 export class BookService implements IBookService {
@@ -29,11 +30,11 @@ export class BookService implements IBookService {
       throw new Error('Failed to fetch all books data.')
     }
   }
-  async purchaseBook(id: number): Promise<BookPurchaseResponse> {
+  async purchaseBook(book: CartItem): Promise<BookPurchaseResponse> {
     try {
       const response = await axios.post(
-        this.API_URL + '/' + id + '/purchase',
-        {},
+        this.API_URL + '/' + book.id + '/purchase',
+        book,
         {
           headers: {
             'Content-Type': 'application/json',
