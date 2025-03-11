@@ -71,7 +71,7 @@ const d = new Date()
       <div class="mt-8 pt-8 border-t border-gray-300 text-center">
         <p>
           &copy;{{ d.getFullYear() }} <a href="https://webtech.id" target="_blank">Frumentius</a>.
-          All rights reserved.
+          Circlepos fron-end bookstore challenge.
         </p>
         <div class="flex justify-center space-x-4 mt-4">
           <img src="/images/logo/visa.png" alt="Visa" class="h-4" />

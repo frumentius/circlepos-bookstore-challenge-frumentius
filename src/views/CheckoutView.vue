@@ -54,7 +54,7 @@ const checkoutSubmit = (e: Event) => {
     <div class="mx-auto md:max-w-2xl lg:max-w-6xl md:grid md:grid-cols-5 md:gap-4">
       <div class="md:col-span-2 text-sm/6 font-medium bg-gray-100 px-6 pt-6 pb-10">
         <h2 class="block md:hidden text-2xl">Your Order</h2>
-        <div class="text-sm/4 font-normal italic text-gray-500 pb-10">
+        <div class="text-sm/4 font-normal italic text-gray-500 pb-10 text-justify">
           For now only the first item will be checked out due to the limitation of the Back-end API.
           The API doesn't have support for bulk purchase.
         </div>
@@ -358,7 +358,7 @@ const checkoutSubmit = (e: Event) => {
                 <div class="col-span-full">
                   <button
                     type="submit"
-                    class="flex items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-sm font-medium text-white hover:bg-primary focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-hidden w-full"
+                    class="flex items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-sm font-bold text-white hover:bg-primary focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:outline-hidden w-full"
                     :disabled="isLoading"
                   >
                     <span v-if="!isLoading">
@@ -407,7 +407,7 @@ const checkoutSubmit = (e: Event) => {
         <div class="mt-16 text-center">
           <p class="text-sm">
             &copy;{{ d.getFullYear() }} <a href="https://webtech.id" target="_blank">Frumentius</a>.
-            All rights reserved.
+            Circlepos fron-end bookstore challenge.
           </p>
         </div>
       </div>
