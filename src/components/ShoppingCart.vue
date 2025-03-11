@@ -86,6 +86,7 @@ const initiateCheckout = () => {
                             <img
                               :src="'/images/product/thumbnail/book ' + product.id + '.jpg'"
                               :alt="product.title"
+                              loading="lazy"
                               class="w-18 rounded-md aspect-2/3 object-cover"
                             />
 

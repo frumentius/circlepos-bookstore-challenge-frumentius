@@ -139,6 +139,7 @@ const toggleFav = () => emits('toggle-favourite')
             <img
               :src="'/images/product/book ' + props.product.id + '.jpg'"
               :alt="props.product.title"
+              loading="lazy"
               class="block sm:hidden w-full rounded-lg shadow-sm shadow-gray-400"
             />
           </div>
@@ -185,6 +186,7 @@ const toggleFav = () => emits('toggle-favourite')
       <img
         :src="'/images/product/book ' + props.product.id + '.jpg'"
         :alt="props.product.title"
+        loading="lazy"
         class="hidden sm:block w-full object-cover sm:rounded-xl md:rounded-2xl shadow-sm shadow-gray-400"
       />
     </div>

@@ -243,6 +243,7 @@ const closeCart = () => {
                           :src="item.imageSrc"
                           :alt="item.imageAlt"
                           class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
+                          loading="lazy"
                         />
                         <a :href="item.href" class="mt-6 block font-medium text-gray-700">
                           <span class="absolute inset-0 z-10" aria-hidden="true" />
@@ -320,7 +321,12 @@ const closeCart = () => {
             <div class="ml-4 flex lg:ml-0">
               <RouterLink to="/">
                 <span class="sr-only">Your Company</span>
-                <img class="h-8 w-auto" src="/images/logo/circlepos.png" alt="" />
+                <img
+                  class="h-8 w-auto"
+                  src="/images/logo/circlepos.png"
+                  loading="lazy"
+                  alt="Circlepos"
+                />
               </RouterLink>
             </div>
 
@@ -369,6 +375,7 @@ const closeCart = () => {
                                 <img
                                   :src="item.imageSrc"
                                   :alt="item.imageAlt"
+                                  loading="lazy"
                                   class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
                                 />
                                 <a :href="item.href" class="mt-6 block font-medium text-gray-700">

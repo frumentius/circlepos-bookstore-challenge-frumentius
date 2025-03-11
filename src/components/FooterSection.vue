@@ -71,12 +71,12 @@ const d = new Date()
       <div class="mt-8 pt-8 border-t border-gray-300 text-center">
         <p>
           &copy;{{ d.getFullYear() }} <a href="https://webtech.id" target="_blank">Frumentius</a>.
-          Circlepos fron-end bookstore challenge.
+          Circlepos front-end bookstore challenge.
         </p>
         <div class="flex justify-center space-x-4 mt-4">
-          <img src="/images/logo/visa.png" alt="Visa" class="h-4" />
-          <img src="/images/logo/mastercard.png" alt="Mastercard" class="h-4" />
-          <img src="/images/logo/paypal.png" alt="PayPal" class="h-4" />
+          <img src="/images/logo/visa.png" loading="lazy" alt="Visa" class="h-4" />
+          <img src="/images/logo/mastercard.png" loading="lazy" alt="Mastercard" class="h-4" />
+          <img src="/images/logo/paypal.png" loading="lazy" alt="PayPal" class="h-4" />
         </div>
       </div>
     </div>

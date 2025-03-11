@@ -21,6 +21,7 @@ const props = defineProps<{
         <img
           :src="'/images/product/thumbnail/book ' + book.id + '.jpg'"
           :alt="book.title"
+          loading="lazy"
           class="w-20 sm:w-25 rounded-md object-cover block aspect-2/3 shadow-sm shadow-gray-500 group-hover:shadow-md group-hover:opacity-75"
         />
         <div>

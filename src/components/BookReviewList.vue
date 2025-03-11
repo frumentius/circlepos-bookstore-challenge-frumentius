@@ -51,6 +51,7 @@ const props = defineProps<{
           <img
             alt="Emily Selman."
             src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+            loading="lazy"
             class="aspect-1/1 w-10 rounded-full"
           />
           <div>
@@ -76,6 +77,7 @@ const props = defineProps<{
           <img
             alt="Hector Gibbons"
             src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
+            loading="lazy"
             class="aspect-1/1 w-10 rounded-full"
           />
           <div>
@@ -102,6 +104,7 @@ const props = defineProps<{
           <img
             alt="Mark Edwards"
             src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixqx=oilqXxSqey&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+            loading="lazy"
             class="aspect-1/1 w-10 rounded-full"
           />
           <div>

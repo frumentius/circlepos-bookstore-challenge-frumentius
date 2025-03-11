@@ -78,6 +78,7 @@ function goto(idx: number) {
           <img
             :src="image.src"
             :alt="image.alt"
+            loading="lazy"
             class="rounded-3xl shadow-sm shadow-gray-500 hover:shadow-md hover:opacity-75"
           />
         </div>

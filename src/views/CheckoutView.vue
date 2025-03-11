@@ -48,7 +48,7 @@ const checkoutSubmit = (e: Event) => {
   <div class="bg-checkout text-gray-700">
     <div class="block md:hidden bg-white">
       <div class="mx-auto max-w-2xl px-6 py-6">
-        <img class="w-6" src="/images/logo/circlepos.png" />
+        <img class="w-6" src="/images/logo/circlepos.png" loading="lazy" alt="Circlepos" />
       </div>
     </div>
     <div class="mx-auto md:max-w-2xl lg:max-w-6xl md:grid md:grid-cols-5 md:gap-4">
@@ -77,6 +77,7 @@ const checkoutSubmit = (e: Event) => {
               <img
                 :src="'/images/product/thumbnail/book ' + product.id + '.jpg'"
                 :alt="product.title"
+                loading="lazy"
                 class="w-18 rounded-md aspect-2/3 object-cover"
               />
             </li>
@@ -107,13 +108,23 @@ const checkoutSubmit = (e: Event) => {
         </div>
       </div>
       <div class="md:col-span-3 bg-white px-6 sm:px-10 md:px-16 lg:px-20 py-10">
-        <img class="hidden md:block w-8 mb-16" src="/images/logo/circlepos.png" />
+        <img
+          class="hidden md:block w-8 mb-16"
+          src="/images/logo/circlepos.png"
+          loading="lazy"
+          alt="Circlepos"
+        />
         <form ref="formElement" @submit="checkoutSubmit($event)">
           <button
             type="button"
             class="rounded-md bg-warning px-8 py-3 text-sm sm:text-xs lg:text-sm font-medium hover:bg-warning focus:outline-hidden w-full"
           >
-            <img class="mx-auto h-5" src="/images/logo/paypal.png" />
+            <img
+              class="mx-auto h-5"
+              src="/images/logo/paypal.png"
+              loading="lazy"
+              alt="Pay with PayPal"
+            />
           </button>
           <div class="relative my-8">
             <div class="absolute inset-0 flex items-center">
@@ -395,8 +406,13 @@ const checkoutSubmit = (e: Event) => {
                     <div>&nbsp;Fusce faucibus neque sapien et condimentum turpis commodo.</div>
                   </div>
                   <div class="flex justify-center space-x-2 mt-2">
-                    <img src="/images/logo/visa.png" alt="Visa" class="h-4" />
-                    <img src="/images/logo/mastercard.png" alt="Mastercard" class="h-4" />
+                    <img src="/images/logo/visa.png" alt="Visa" class="h-4" loading="lazy" />
+                    <img
+                      src="/images/logo/mastercard.png"
+                      alt="Mastercard"
+                      class="h-4"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
               </div>
@@ -407,7 +423,7 @@ const checkoutSubmit = (e: Event) => {
         <div class="mt-16 text-center">
           <p class="text-sm">
             &copy;{{ d.getFullYear() }} <a href="https://webtech.id" target="_blank">Frumentius</a>.
-            Circlepos fron-end bookstore challenge.
+            Circlepos front-end bookstore challenge.
           </p>
         </div>
       </div>
