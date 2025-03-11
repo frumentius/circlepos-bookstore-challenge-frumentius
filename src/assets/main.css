@@ -2,14 +2,15 @@
 
 :root {
   --color-carmine-main: #961918;
-  --color-primary-main: #189697;
-  --color-primary-darkened: #13696a;
-  --color-secondary-main: #6b7280;
-  --color-secondary-darkened: #4c515b;
+  --color-primary-main: #00b3b3;
+  /*--color-primary-main: #00cc99;*/
+  --color-primary-darkened: #009999;
+  --color-secondary-main: #818999;
+  --color-secondary-darkened: #6b7280;
   --color-danger-main: #ef798a;
-  --color-danger-darkened: #bd5561;
-  --color-warning-main: #fcca46;
-  --color-warning-darkened: #c88d31;
+  --color-danger-darkened: #d66d7d;
+  --color-warning-main: #ffce47;
+  --color-warning-darkened: #e6b940;
 }
 
 .bg-hero {
