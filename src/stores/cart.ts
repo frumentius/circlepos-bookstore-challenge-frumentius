@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 import type { Book } from '@/models/books'
 import type { CartItem } from '@/models/carts'
 
-import { idb } from '@/composables/useIDB'
+import { IdbService } from '@/services/idbService'
 import { makeSerializable } from '@/utils/parsers'
 
 export const useCartStore = defineStore('cart', () => {
@@ -16,7 +16,7 @@ export const useCartStore = defineStore('cart', () => {
     items.value.reduce((sum, item) => sum + item.price * item.quantity, 0),
   )
 
-  function addItem(item: Book) {
+  async function addItem(item: Book) {
     let newQty = 1
     let doPush = true
     for (let i = 0; i < items.value.length; i++)
@@ -31,18 +31,21 @@ export const useCartStore = defineStore('cart', () => {
       items.value.push({ ...item, quantity: newQty })
       lastUpdated.value = new Date()
 
+      const idb = await IdbService.create()
       idb.clear('carts').then(() => {
         idb.store('carts', makeSerializable(items.value))
       })
     }
   }
-  function removeItem(itemId: number) {
+  async function removeItem(itemId: number) {
     items.value = items.value.filter((i) => i.id !== itemId)
     lastUpdated.value = new Date()
 
+    const idb = await IdbService.create()
     idb.delete('carts', itemId)
   }
-  function clearCart() {
+  async function clearCart() {
+    const idb = await IdbService.create()
     idb.clear('carts').then(() => {
       items.value = []
       lastUpdated.value = null
@@ -51,6 +54,7 @@ export const useCartStore = defineStore('cart', () => {
 
   async function hydrate() {
     try {
+      const idb = await IdbService.create()
       const cartRes = await idb.getAll<CartItem[]>('carts')
       items.value = makeSerializable<CartItem[]>(cartRes)
     } catch (err) {
